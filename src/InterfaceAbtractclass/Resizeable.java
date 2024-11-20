@@ -1,0 +1,5 @@
+package InterfaceAbtractclass;
+
+public interface Resizeable {
+    void resize(double percent);
+}
