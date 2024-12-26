@@ -1,6 +1,6 @@
-package CaseStudy.model.sevice;
+package CaseStudy.Model.Sevice;
 
-import CaseStudy.model.entity.Student;
+import CaseStudy.Model.Entity.Student;
 import java.util.List;
 
 public interface IStudentService {

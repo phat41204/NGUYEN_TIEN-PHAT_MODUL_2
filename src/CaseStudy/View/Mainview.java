@@ -1,7 +1,7 @@
-package CaseStudy.view;
+package CaseStudy.View;
 
-import CaseStudy.controller.StudentController;
-import CaseStudy.model.entity.Student;
+import CaseStudy.Controller.StudentController;
+import CaseStudy.Model.Entity.Student;
 
 import java.util.List;
 import java.util.Scanner;
@@ -23,7 +23,8 @@ public class Mainview {
                 System.out.println("3. Edit Student");
                 System.out.println("4. Delete Student");
                 System.out.println("5. Show Study Process");
-                System.out.println("6. Return main menu");
+                System.out.println("6. update Study Process");
+                System.out.println("7. Return main menu");
                 System.out.println("Enter your choice");
                 int choice = Integer.parseInt(sc.nextLine());
                 sc.nextLine();
@@ -73,6 +74,7 @@ public class Mainview {
                         break;
 
                     case 6:
+                        updateStudyProcess(sc, studentController);
                         return;
                     default:
                         System.out.println("user enters incorrectly");
@@ -99,8 +101,23 @@ public class Mainview {
     }
 
     private static void showStudyProcess(Scanner sc, StudentController studentController) {
-        System.out.println("Enter Student ID to view Study Process: ");
+        List<Student> students = studentController.getall();
+       for (Student student : students) {
+           System.out.println( student);
+       }
+        System.out.println("choose student you want to see study process by entering their ID: ");
         int id = Integer.parseInt(sc.nextLine());
         studentController.viewStudyProcess(id);
     }
+    private static void updateStudyProcess(Scanner sc, StudentController studentController) {
+        List<Student> students = studentController.getall();
+        for (Student student : students) {
+            System.out.println( student);
+        }
+        System.out.println("choose student you want to edit study process by entering their ID: ");
+        int id = Integer.parseInt(sc.nextLine());
+        studentController.updateStudyProcess(id, sc);
+    }
+
 }
+

@@ -1,6 +1,6 @@
-package CaseStudy.model.sevice;
+package CaseStudy.Model.Sevice;
 
-import CaseStudy.model.entity.StudyProcess;
+import CaseStudy.Model.Entity.StudyProcess;
 
 import java.util.List;
 
@@ -11,5 +11,5 @@ public interface IstudyProcesses {
 
     void addStudyProcess(StudyProcess studyProcess);
 
-    void updateStudyProcess(StudyProcess studyProcess);
+    void updateStudyProcess(int studenId ,StudyProcess studyProcess);
 }
